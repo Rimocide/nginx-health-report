@@ -13,6 +13,9 @@ border: 5px solid black;
 padding: 20px;
 margin: 30px 500px;
 }
+table, th, td {
+  border:1px solid black;
+}
 </style>
 <body>
 <h1>System Health Report</h1>
@@ -34,7 +37,7 @@ fi
 
 echo "<h2>Disk Usage Report</h2>" >> healthreport.html
 
-df -h | grep /dev/nvme01p6 | awk 'BEGIN { print "<table><tr><th>Total</th><th>Used</th><th>Available</th></tr>" } { print "<tr><td>" $2 "</td><td>" $3 "</td><td>" $4 "</td></tr>" } END { print "</table>" }' >> healthreport.html
+df -h | grep /dev/nvme0n1p6 | awk 'BEGIN { print "<table><tr><th>Total</th><th>Used</th><th>Available</th></tr>" } { print "<tr><td>" $2 "</td><td>" $3 "</td><td>" $4 "</td></tr>" } END { print "</table>" }' >> healthreport.html
 
 
 if [ $? -eq 0 ]; then
