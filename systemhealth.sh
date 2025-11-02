@@ -5,7 +5,15 @@ command -v df >/dev/null 2>&1 || { echo "'df' is not installed. Exiting."; exit 
 command -v free >/dev/null 2>&1  || { echo "'free' is not installed. Exiting."; exit 1; } 
 command -v nginx >/dev/null 2>&1 || { echo "'nginx' is not installed. Exiting."; exit 1; } 
 
+systemctl enable nginx
+if [ $? -ne 0 ]; then
+echo "Could not enable nginx. Please fix the issue and rerun this script"
+fi
 
+systemctl start nginx
+if [ $? -ne 0 ]; then
+echo "Could not start nginx. Please fix the issue and rerun this script"
+fi
 
 (
 cat <<- 'EOF'
@@ -63,8 +71,5 @@ cat <<- EOF
 EOF
 ) >> healthreport.html
 
-  mv healthreport.html index.html
-
-  docker build -t health-report .
-  docker run --name nginx-report -d -p 8080:80 health-report
+  mv healthreport.html /usr/share/nginx/html
 
