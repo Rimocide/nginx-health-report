@@ -1,4 +1,4 @@
-```markdown
+markdown
 # System Health Report Generator
 
 This is a simple Bash script that generates a quick HTML-based **system health report** and serves it using **nginx**. It checks memory and disk usage, formats them nicely into an HTML table, and makes the report accessible via your local nginx server.
@@ -16,12 +16,8 @@ The idea is to have an easy, zero-fuss way to visualize system stats right in yo
   - Memory usage (via `free -h`)  
   - Disk usage (via `df -h`)  
 - Places the report in nginx’s web root (`/usr/share/nginx/html`)  
-- Accessible at:  
-```
 
-[http://localhost](http://localhost)
 
-````
 
 ---
 
@@ -129,5 +125,5 @@ sudo systemctl restart nginx
 
 MIT License. Do whatever you want with it. Just don’t blame me if you blow up your nginx config.
 
-```
-```
+
+
