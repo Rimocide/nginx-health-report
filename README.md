@@ -9,7 +9,7 @@ The idea is to have an easy, zero-fuss way to visualize system stats right in yo
 
 ## Features
 
-- Checks for required dependencies (`docker`, `df`, `free`, `nginx`) before running  
+- Checks for required dependencies (`df`, `free`, `nginx`) before running  
 - Automatically enables and starts the `nginx` service  
 - Generates a styled HTML report with:
   - Current timestamp  
@@ -29,7 +29,6 @@ Make sure you have `systemctl` and a working `sudo` user.
 ### Dependencies
 
 The script uses the following tools:
-- `docker`
 - `df` (coreutils)
 - `free` (procps-ng)
 - `nginx`
@@ -39,14 +38,14 @@ You can install them with your package manager:
 
 **Arch Linux:**
 ```bash
-sudo pacman -S docker coreutils procps-ng nginx
+sudo pacman -S coreutils procps-ng nginx
 ````
 
 **Ubuntu/Debian:**
 
 ```bash
 sudo apt update
-sudo apt install docker.io coreutils procps nginx -y
+sudo apt install coreutils procps nginx -y
 ```
 
 ---
@@ -56,8 +55,8 @@ sudo apt install docker.io coreutils procps nginx -y
 1. **Clone the repo:**
 
    ```bash
-   git clone https://github.com/<your-username>/<your-repo>.git
-   cd <your-repo>
+   git clone git@github.com:Rimocide/nginx-health-report.git
+   cd nginx-health-report
    ```
 
 2. **Make the script executable:**

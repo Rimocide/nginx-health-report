@@ -1,6 +1,5 @@
 #! /usr/bin/bash
 
-command -v docker >/dev/null 2>&1 || { echo "Docker is not installed. Exiting."; exit 1; }
 command -v df >/dev/null 2>&1 || { echo "'df' is not installed. Exiting."; exit 1; }
 command -v free >/dev/null 2>&1  || { echo "'free' is not installed. Exiting."; exit 1; } 
 command -v nginx >/dev/null 2>&1 || { echo "'nginx' is not installed. Exiting."; exit 1; } 
